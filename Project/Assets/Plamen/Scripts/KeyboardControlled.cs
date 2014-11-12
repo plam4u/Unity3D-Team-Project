@@ -5,7 +5,7 @@ public class KeyboardControlled : MonoBehaviour {
 
     Vector2 velocity = new Vector2();
 	float speed = 10F;
-	float maxSpeed = 15F;
+	float maxSpeed = .35F;
 
 	// Use this for initialization
 	void Start () {
@@ -15,20 +15,22 @@ public class KeyboardControlled : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
 	{
-		velocity.x += Input.GetAxis("Horizontal") * speed;
-		velocity.y += Input.GetAxis("Vertical") * speed;
-		velocity.x *= Time.deltaTime;
-		velocity.y *= Time.deltaTime;
+		float diffX = Input.mousePosition.x - Screen.width / 2;
+		float diffY = Input.mousePosition.y - Screen.height / 2;
+		float angle = Mathf.Atan2(diffY, diffX);
+		transform.eulerAngles = new Vector3(0, 0, angle * 180 / Mathf.PI);
 
-		float translateX = Mathf.Max(Mathf.Min(maxSpeed, velocity.x), -maxSpeed);
-		float translateY = Mathf.Max(Mathf.Min(maxSpeed, velocity.y), -maxSpeed);
+        float currentSpeed = speed * Time.deltaTime;
+        velocity.x += Input.GetAxis("Horizontal") * (currentSpeed);
+        velocity.y += Input.GetAxis("Vertical") * (currentSpeed);
+
+        velocity.x = Mathf.Max(Mathf.Min(currentSpeed, velocity.x), -currentSpeed);
+        velocity.y = Mathf.Max(Mathf.Min(currentSpeed, velocity.y), -currentSpeed);
+
+        if (Input.GetAxis("Horizontal") == 0) velocity.x *= .7F;
+        if (Input.GetAxis("Vertical") == 0) velocity.y *= .7F;
 
 		Vector3 p = transform.position;
 		transform.position = new Vector3(p.x + velocity.x, p.y + velocity.y, p.z);
-
-		float diffX = Input.mousePosition.x - Screen.width/2;
-		float diffY = Input.mousePosition.y - Screen.height/2;
-		float angle = Mathf.Atan2(diffY,diffX);
-		transform.eulerAngles = new Vector3(0, 0, angle * 180/Mathf.PI);
 	}
 }
