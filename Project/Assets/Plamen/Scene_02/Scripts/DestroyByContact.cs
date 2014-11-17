@@ -25,7 +25,7 @@ public class DestroyByContact : MonoBehaviour {
 		health = GetComponent<Health>();
 		if(health == null)
 		{
-			Debug.LogWarning("Cannot find Health component!");
+			//Debug.LogWarning("Cannot find Health component!");
 		}
 	}
 	
@@ -38,7 +38,7 @@ public class DestroyByContact : MonoBehaviour {
 
 		if (other.tag == "Player")
 		{
-
+			//Debug.Log("Player hit!");
 			Destroy(transform.gameObject);
 
 			if (explosion_player != null)
@@ -49,9 +49,21 @@ public class DestroyByContact : MonoBehaviour {
 
 		if(other.tag == "Bullet")
 		{
-			health.health -= 15;
+			if(health != null)
+			{
+				health.health -= 15;
 
-			if(health.health <= 0)
+				if (health.health <= 0)
+				{
+					Destroy(transform.gameObject);
+
+					if (explosion_player != null)
+					{
+						Instantiate(explosion_player, transform.position, transform.rotation);
+					}
+				}
+			}
+			else
 			{
 				Destroy(transform.gameObject);
 

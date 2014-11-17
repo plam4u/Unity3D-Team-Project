@@ -20,6 +20,8 @@ public class MoveWithJoystick : MonoBehaviour {
 
 	void Update()
 	{
+		rigidbody.angularVelocity = Vector3.zero;
+
 		float leftStickX = Input.GetAxis("Horizontal");
 		float leftStickY = Input.GetAxis("Vertical");
 		float rightStickX = Input.GetAxis("HorizontalR");
