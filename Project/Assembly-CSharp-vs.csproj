@@ -50,7 +50,14 @@
      <Compile Include="Assets\Plamen\Scene_01\Scripts\KeyboardControlled.cs" />
      <Compile Include="Assets\Plamen\Scene_01\Scripts\MoveForward.cs" />
      <Compile Include="Assets\Plamen\Scene_01\Scripts\Weapon.cs" />
+     <Compile Include="Assets\Plamen\Scene_02\Scripts\DestroyByBoundary.cs" />
+     <Compile Include="Assets\Plamen\Scene_02\Scripts\DestroyByContact.cs" />
+     <Compile Include="Assets\Plamen\Scene_02\Scripts\FollowPlayer.cs" />
+     <Compile Include="Assets\Plamen\Scene_02\Scripts\GameController.cs" />
+     <Compile Include="Assets\Plamen\Scene_02\Scripts\Health.cs" />
      <Compile Include="Assets\Plamen\Scene_02\Scripts\MoveWithJoystick.cs" />
+     <Compile Include="Assets\Plamen\Scene_02\Scripts\Mover.cs" />
+     <Compile Include="Assets\Plamen\Scene_02\Scripts\RandomRotator.cs" />
      <Compile Include="Assets\Plamen\Scene_02\Scripts\TestJoystick.cs" />
      <Compile Include="Assets\Plamen\SpaceShooterTutorial\Done\Done_Scripts\Done_BGScroller.cs" />
      <Compile Include="Assets\Plamen\SpaceShooterTutorial\Done\Done_Scripts\Done_DestroyByBoundary.cs" />
