@@ -52,6 +52,16 @@
      <Compile Include="Assets\Plamen\Scene_01\Scripts\Weapon.cs" />
      <Compile Include="Assets\Plamen\Scene_02\Scripts\MoveWithJoystick.cs" />
      <Compile Include="Assets\Plamen\Scene_02\Scripts\TestJoystick.cs" />
+     <Compile Include="Assets\Plamen\SpaceShooterTutorial\Done\Done_Scripts\Done_BGScroller.cs" />
+     <Compile Include="Assets\Plamen\SpaceShooterTutorial\Done\Done_Scripts\Done_DestroyByBoundary.cs" />
+     <Compile Include="Assets\Plamen\SpaceShooterTutorial\Done\Done_Scripts\Done_DestroyByContact.cs" />
+     <Compile Include="Assets\Plamen\SpaceShooterTutorial\Done\Done_Scripts\Done_DestroyByTime.cs" />
+     <Compile Include="Assets\Plamen\SpaceShooterTutorial\Done\Done_Scripts\Done_EvasiveManeuver.cs" />
+     <Compile Include="Assets\Plamen\SpaceShooterTutorial\Done\Done_Scripts\Done_GameController.cs" />
+     <Compile Include="Assets\Plamen\SpaceShooterTutorial\Done\Done_Scripts\Done_Mover.cs" />
+     <Compile Include="Assets\Plamen\SpaceShooterTutorial\Done\Done_Scripts\Done_PlayerController.cs" />
+     <Compile Include="Assets\Plamen\SpaceShooterTutorial\Done\Done_Scripts\Done_RandomRotator.cs" />
+     <Compile Include="Assets\Plamen\SpaceShooterTutorial\Done\Done_Scripts\Done_WeaponController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
