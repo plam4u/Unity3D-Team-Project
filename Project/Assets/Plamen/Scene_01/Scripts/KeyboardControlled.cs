@@ -5,7 +5,7 @@ public class KeyboardControlled : MonoBehaviour {
 
     Vector2 velocity = new Vector2();
 	float speed = 10F;
-	float maxSpeed = .35F;
+	//float maxSpeed = .35F;
 
 	// Use this for initialization
 	void Start () {
