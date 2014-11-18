@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{C22FA9EE-EBFF-6669-DDA9-C1F27475A5F2}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Obstacle Runner\Game\Achievements\Achievements.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Achievements\ChocolateAchievement.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Achievements\CoinsAchievement.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Achievements\MetersAchievement.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Achievements\Observable.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Achievements\Observer.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Achievements\ShieldAchievement.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Achievements\StartGameAchievement.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\CameraScaling.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Camera_Trigger.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\GameController.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\MusicMixer.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Pause_Menu\Pause_Scripts\Help_Button.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Pause_Menu\Pause_Scripts\Mute_UnMute.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Pause_Menu\Pause_Scripts\Pause_Start.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Pause_Menu\Pause_Scripts\Preview_Button.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Pause_Menu\Pause_Scripts\Restart_Level_Script.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Pause_Menu\Pause_Scripts\Return_To_Level.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Pause_Menu\Pause_Scripts\Return_To_Menu.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Player\Animation2d.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Player\CameraCTRL.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Player\CharacterDriver.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Player\PlayerShieldCTRL.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Player\animationMove.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Player\startAnimactionCRTL.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\9_Helicopter\HeliCTRL.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\9_Helicopter\WingdCTRL.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Chocolate\ChocolateBoost.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Coin\CoinCTRL.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Glue\GlueSlow.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\HealthBar\BarDisplay.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\HealthBar\HealthPlayer.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Loudspeaker\LoudspeakerSlow.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Numbers\NumberChanger.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Numbers\NumberChangeronGUI.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Numbers\NumbersCTRL.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Numbers\NumbersCTRLonGUI.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Numbers\PositionGUItexture.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Popup\popUp.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Popup\popUpCreator.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Popup\popUpIconCTRL.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Popup\popUpTextCTRL.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\PopupBonus\popUpBonus.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\PopupBonus\popUpBonusCTRL.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\PopupBonus\popUpBonusCreator.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Shield\ShieldCTRL.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Train\RunHisAssOver.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Resources\Train\RunningTrane.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\ShadowController.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Terrain\DataBase.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\Terrain\TerrainOperator.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\TouchController\MenuTouchController.js" />
+     <Compile Include="Assets\Obstacle Runner\Game\UpDown.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Background_Music_Control.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Button_Acel_Pressed.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Button_Back_Pressed.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Button_Exit_Pressed.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Button_Fingers_Pressed.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Button_Play_Pressed.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Button_Premium_Pressed.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Button_Reset_Pressed.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Button_Results_Pressed.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Button_Settings_Pressed.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Button_Yes_Pressed.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Button_no_Pressed.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Camera_move.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Camera_relative_position.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Controller_Create.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Controller_script.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Load_lvl.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Loading.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Music_Icon.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Pin_Music_Control.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Pin_Sound_Control.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Sound_Icon.js" />
+     <Compile Include="Assets\Obstacle Runner\MainMenu\Sound_Volume_Set.js" />
+     <Compile Include="Assets\Obstacle Runner\Standard Assets\Scripts\Camera Scripts\MouseOrbit.js" />
+     <Compile Include="Assets\Obstacle Runner\Standard Assets\Scripts\Camera Scripts\SmoothLookAt.js" />
+     <Compile Include="Assets\outPost\MUI\Character Controllers\Scripts\Camera Scripts\SmoothFollowBB.js" />
+     <Compile Include="Assets\outPost\MUI\Character Controllers\Sources\Scripts\MUI_CharacterMotor.js" />
+     <Compile Include="Assets\outPost\MUI\Character Controllers\Sources\Scripts\MUI_FPSInputController.js" />
+     <Compile Include="Assets\outPost\MUI\Character Controllers\Sources\Scripts\MUI_PlatformInputController.js" />
+     <Compile Include="Assets\outPost\MUI\Character Controllers\Sources\Scripts\MUI_ThirdPersonCamera.js" />
+     <Compile Include="Assets\outPost\MUI\Character Controllers\Sources\Scripts\MUI_ThirdPersonController.js" />
+     <Compile Include="Assets\outPost\MUI\Script\Scripts\2D\Camera\CameraFocus.js" />
+     <Compile Include="Assets\outPost\MUI\Script\Scripts\2D\Camera\CameraScrolling.js" />
+     <Compile Include="Assets\outPost\MUI\Script\Scripts\2D\Camera\CameraTargetAttributes.js" />
+     <Compile Include="Assets\outPost\MUI\Script\Scripts\2D\Character Controls\PlatformerController.js" />
+     <Compile Include="Assets\outPost\MUI\Script\Scripts\2D\Character Controls\PlatformerPlayerAnimation.js" />
+     <Compile Include="Assets\outPost\MUI\Script\Scripts\2D\Character Controls\PlatformerPushBodies.js" />
+     <Compile Include="Assets\outPost\MUI\Script\Scripts\2D\SpawnPoint.js" />
+     <Compile Include="Assets\outPost\MUI\Script\Scripts\Effects\Foot.js" />
+     <Compile Include="Assets\outPost\MUI\shootPlayer\DemoScene\Scripts\MixingCrossfade.js" />
+     <Compile Include="Assets\outPost\MUI\shootPlayer\DemoScene\Scripts\SampleMoveScript.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\Misc Scripts\DisableComponentOnPause.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\Misc Scripts\DrawRockets.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\Misc Scripts\EnableWhenPaused.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\Misc Scripts\FPSCounter.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\Misc Scripts\HideGuiWhenPaused.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\Misc Scripts\LevelLoadFade.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\Misc Scripts\LockCursor.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\Misc Scripts\Visibility Culling\VisibilityCuller.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\Misc Scripts\Visibility Culling\VisibilityCullingArea.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\Standard Assets\Scripts\FPSWalker.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\WeaponScripts\AI.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\WeaponScripts\AIAnimation.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\WeaponScripts\AutoWayPoint.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\WeaponScripts\CharacterDamage.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\WeaponScripts\DamageReceiver.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\WeaponScripts\Explosion-Advanced.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\WeaponScripts\FPSPlayer.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\WeaponScripts\InstantDeathCollider.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\WeaponScripts\MachineGun.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\WeaponScripts\Pickup.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\WeaponScripts\PlayerWeapons.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\WeaponScripts\Rocket.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\WeaponScripts\RocketLauncher.js" />
+     <Compile Include="Assets\outPost\UnityFPSTutorial\WeaponScripts\SentryGun.js" />
+     <None Include="Assets\outPost\MUI\Shaders\Particle Add (Overlay).shader" />
+     <None Include="Assets\outPost\ImportantReadFirst.txt" />
+     <None Include="Assets\outPost\UnityFPSTutorial\Pro Standard Assets\Image Based\GlowEffectDownsample.shader" />
+     <None Include="Assets\outPost\UnityFPSTutorial\Standard Assets\Water\Sources\FX-Water Simple.shader" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
