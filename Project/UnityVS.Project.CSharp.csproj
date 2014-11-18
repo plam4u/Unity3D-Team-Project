@@ -64,6 +64,7 @@
     <Compile Include="Assets\Plamen\Scene_02\Scripts\Mover.cs" />
     <Compile Include="Assets\Plamen\Scene_02\Scripts\RandomRotator.cs" />
     <Compile Include="Assets\Plamen\Scene_02\Scripts\TestJoystick.cs" />
+    <Compile Include="Assets\Plamen\Scene_03\MenuHandler.cs" />
     <Compile Include="Assets\Plamen\SpaceShooterTutorial\Done\Done_Scripts\Done_BGScroller.cs" />
     <Compile Include="Assets\Plamen\SpaceShooterTutorial\Done\Done_Scripts\Done_DestroyByBoundary.cs" />
     <Compile Include="Assets\Plamen\SpaceShooterTutorial\Done\Done_Scripts\Done_DestroyByContact.cs" />

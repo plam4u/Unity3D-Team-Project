@@ -45,6 +45,7 @@ public class DestroyByContact : MonoBehaviour {
 			{
 				Instantiate(explosion_player, transform.position, transform.rotation);
 			}
+			Application.LoadLevel("Scene_03_ExperimentingUI");
 		}
 
 		if(other.tag == "Bullet")
