@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 //Need Tobe attach to a Empty game object
+//Need To be added to every scene 
+//I make prefab, and must be added to every scene
 public class InGameMenu : MonoBehaviour
 {
     public GUISkin inGameSkin = null;

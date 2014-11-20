@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+//Need To be added to every scene 
+//I make prefab, and must be added to every scene
 public class Menu : MonoBehaviour
 {
 
