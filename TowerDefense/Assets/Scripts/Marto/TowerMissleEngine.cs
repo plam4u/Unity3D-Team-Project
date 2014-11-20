@@ -8,8 +8,8 @@ using System.Collections;
 public class TowerMissleEngine : MonoBehaviour
 {
 	private GameObject enemy;
-	private float missleSpeed;
-	private float missleDamage;
+	private float missileSpeed;
+	private float missileDamage;
 
 	public void SetEnemy (GameObject enemy)
 	{
@@ -23,22 +23,22 @@ public class TowerMissleEngine : MonoBehaviour
 	
 	public void SetMissleSpeed (float missleSpeed)
 	{
-		this.missleSpeed = missleSpeed;
+		this.missileSpeed = missleSpeed;
 	}
 	
 	public float GetMissleSpeed ()
 	{
-		return this.missleSpeed;
+		return this.missileSpeed;
 	}
 	
 	public void SetMissleDamage (float missleDamage)
 	{
-		this.missleDamage = missleDamage;
+		this.missileDamage = missleDamage;
 	}
 	
 	public float GetMissleDamage ()
 	{
-		return missleDamage;
+		return missileDamage;
 	}
 	
 	// Update is called once per frame
@@ -53,7 +53,7 @@ public class TowerMissleEngine : MonoBehaviour
 	/// </summary>
 	private void MoveTowerProjectile ()
 	{
-		rigidbody.velocity = transform.forward * missleSpeed;
+		rigidbody.velocity = transform.forward * missileSpeed;
 		
 		Vector3 distancePos = enemy.transform.position - transform.position;
 		Quaternion targetRotation = Quaternion.LookRotation (distancePos);
@@ -71,12 +71,11 @@ public class TowerMissleEngine : MonoBehaviour
 		if (other.gameObject.CompareTag ("Enemy")) {
 			DoDamageToEnemy (other.gameObject);
 		}
-		// TODO: Do damage to enemy.
 	}
 	
 	//TODO: Implement method when enemy is ready.
 	private void DoDamageToEnemy (GameObject enemy)
 	{
-		// enemy.TakeDamage(this.missleDamage);
+		enemy.GetComponent<Enemy> ().TakeDamage (this.missileDamage);
 	}
 }
