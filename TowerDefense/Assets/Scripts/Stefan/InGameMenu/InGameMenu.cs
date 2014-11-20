@@ -18,12 +18,15 @@ public class InGameMenu : MonoBehaviour
 
 
     public Texture2D menuItem;
-    public Texture2D menuBg;   
+    public Texture2D menuBg;
+
+    List<GUI> guiList = new List<GUI>();
 
     void Awake()
     {
         menuPosX = Screen.width - menuWidth;
         menuPosY = Screen.height - menuHeght;        
+        
     }
 
     void OnGUI()
@@ -35,6 +38,7 @@ public class InGameMenu : MonoBehaviour
     private void All()
     {
         GUI.BeginGroup(new Rect(menuPosX, menuPosY, menuWidth, menuHeght), menuBg);
+            
             GUI.Button(new Rect(4, 4, 48, 48), menuItem);
             GUI.Button(new Rect(56, 4, 48, 48), menuItem);
             GUI.Button(new Rect(108, 4, 48, 48), menuItem);
