@@ -36,7 +36,8 @@ public class Menu : MonoBehaviour
 
         if(GUI.Button(new Rect(0, 0, 200, 50), "Start Game"))
         {
-            Debug.Log("Application Load Level");
+            //Debug.Log("Application Load Level");
+            Application.LoadLevel("PlayScene");
         }
 
         if(GUI.Button(new Rect(0, 60, 200, 50), "Options"))
