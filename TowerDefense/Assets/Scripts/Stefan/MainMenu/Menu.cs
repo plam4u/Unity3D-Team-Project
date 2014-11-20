@@ -4,6 +4,8 @@ using System.Collections;
 public class Menu : MonoBehaviour
 {
 
+    public bool isMenuShow = true;
+
     public GUISkin menuSkin = null;
 
     public Texture2D menuItem;
@@ -25,33 +27,64 @@ public class Menu : MonoBehaviour
 
     }
 
+    void Update()
+    {
+
+        if (Input.GetKeyDown("escape"))
+        {
+            if(Time.timeScale == 1)
+            {
+                Time.timeScale = 0;
+                isMenuShow = true;                
+            }
+            else
+            {
+                isMenuShow = false;
+                Time.timeScale = 1;
+            }
+        }
+    }
+
 
     void OnGUI()
     {
 
-        GUI.skin = menuSkin;
-        GUI.BeginGroup(new Rect(menuPosX, menuPosY, menuWidth, menuHeght), menuBg);
-        GUI.Box(new Rect(0, 30, menuWidth, menuHeght), "TOWER DEFENCE");
-        GUI.BeginGroup(new Rect(100, 200, 200, 500));
-
-        if(GUI.Button(new Rect(0, 0, 200, 50), "Start Game"))
+        if (isMenuShow)
         {
-            //Debug.Log("Application Load Level");
-            Application.LoadLevel("PlayScene");
-        }
+            GUI.skin = menuSkin;
+            GUI.BeginGroup(new Rect(menuPosX, menuPosY, menuWidth, menuHeght), menuBg);
+            GUI.Box(new Rect(0, 30, menuWidth, menuHeght), "TOWER DEFENCE");
+            GUI.BeginGroup(new Rect(100, 200, 200, 500));
 
-        if(GUI.Button(new Rect(0, 60, 200, 50), "Options"))
-        {
-            Debug.Log("Application Load Option");
-        }
+            if (GUI.Button(new Rect(0, 0, 200, 50), "Start Game"))
+            {
+                if (Application.loadedLevelName == "PlayScene")
+                {
+                    //Debug.Log("this level");
+                    Application.LoadLevel(Application.loadedLevel);
+                    Time.timeScale = 1;
+                }
+                else
+                {
+                    //Debug.Log("Application Load Level");
+                    Application.LoadLevel("PlayScene");
+                }
+            }
 
-        if (GUI.Button(new Rect(0, 120, 200, 50), "Exit Game"))
-        {
-            Debug.Log("Application Quit");
+            if (GUI.Button(new Rect(0, 60, 200, 50), "Options"))
+            {
+                Debug.Log("Application Load Option");
+            }
+
+            if (GUI.Button(new Rect(0, 120, 200, 50), "Exit Game"))
+            {
+                //Debug.Log("Application Quit");
+                Application.Quit();
+            }
+
+            GUI.EndGroup();
+            GUI.EndGroup(); 
         }
-        
-        GUI.EndGroup();
-        GUI.EndGroup();
 
     }
 
