@@ -76,6 +76,8 @@ public class TowerMissleEngine : MonoBehaviour
 	//TODO: Implement method when enemy is ready.
 	private void DoDamageToEnemy (GameObject enemy)
 	{
-		enemy.GetComponent<Enemy> ().TakeDamage (this.missileDamage);
+		// Missing Enemy dependency
+		//enemy.GetComponent<Enemy> ().TakeDamage (this.missileDamage);
+		//------------------^
 	}
 }

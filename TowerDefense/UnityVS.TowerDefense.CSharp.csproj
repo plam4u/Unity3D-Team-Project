@@ -53,9 +53,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Marto\Shoot.cs" />
     <Compile Include="Assets\Scripts\Marto\TowerMissleEngine.cs" />
+    <Compile Include="Assets\Scripts\Plamen\TestTerrainGenerator.cs" />
     <Compile Include="Assets\Scripts\Stefan\InGameMenu\InGameMenu.cs" />
     <Compile Include="Assets\Scripts\Stefan\MainMenu\Menu.cs" />
-    <None Include="Assets\TestDocument.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>
