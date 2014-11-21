@@ -77,7 +77,7 @@ public class TowerMissleEngine : MonoBehaviour
 	private void DoDamageToEnemy (GameObject enemy)
 	{
 		// Missing Enemy dependency
-		//enemy.GetComponent<Enemy> ().TakeDamage (this.missileDamage);
+		enemy.GetComponent<Enemy> ().TakeDamage (missileDamage);
 		//------------------^
 	}
 }
