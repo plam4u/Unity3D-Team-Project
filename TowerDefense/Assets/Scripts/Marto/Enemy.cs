@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -17,11 +18,14 @@ public class Enemy : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// This method is called by the tower projectile and decreases the enemies health, based on the tower damage.
+	/// </summary>
+	/// <param name="missileDamage">Missile damage.</param>
 	public void TakeDamage (float missileDamage)
 	{
 		double damageReduction = CalculateDamageReduction (ArmorPoints);
 		HealthPoints -= CalculateHealthLoss (missileDamage, damageReduction);
-		
 		if (HealthPoints <= 0) {
 			isAlive = false;
 		}
