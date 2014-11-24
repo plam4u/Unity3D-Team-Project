@@ -34,7 +34,7 @@ public class InGameMenu : MonoBehaviour
     public Texture2D menuBg;
 
     public GameObject BuildObj;
-    
+
 
     //Private var's
     private LayerMask layerMask = 1 << 8;
@@ -43,14 +43,15 @@ public class InGameMenu : MonoBehaviour
 
     private GameObject lastHitObj;
 
-    
+    private GameObject[] buildPlaces;
 
-    
+
 
     void Awake()
     {
         menuPosX = Screen.width - menuWidth;
         menuPosY = Screen.height - menuHeght;
+        buildPlaces = GameObject.FindGameObjectsWithTag("BuildMask");
     }
 
 
@@ -60,7 +61,7 @@ public class InGameMenu : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if(Physics.Raycast(ray, out hit, 50, layerMask))
+            if (Physics.Raycast(ray, out hit, 50, layerMask))
             {
                 Debug.Log(hit.collider.tag);
                 BuildObj.transform.position = hit.collider.transform.position;
@@ -69,13 +70,12 @@ public class InGameMenu : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 Debug.Log(hit.collider.name);
-                buildMode = false;
+                buildMode = false;                
             }
         }
-        
     }
 
-    
+
     //Render the ingame menu with GUI style
     void OnGUI()
     {
@@ -90,7 +90,7 @@ public class InGameMenu : MonoBehaviour
         GUI.BeginGroup(new Rect(menuPosX, menuPosY, menuWidth, menuHeght), menuBg);
 
         if (GUI.Button(new Rect(4, 4, 48, 48), menuItem))
-        {           
+        {
             Debug.Log("Button 1");
             buildMode = true;
             BuildObj = Instantiate(BuildObj) as GameObject;
@@ -100,6 +100,8 @@ public class InGameMenu : MonoBehaviour
         if (GUI.Button(new Rect(56, 4, 48, 48), menuItem1))
         {
             Debug.Log("Button 2");
+            Debug.Log(buildPlaces.Length);
+            
         }
 
         if (GUI.Button(new Rect(108, 4, 48, 48), menuItem2))
