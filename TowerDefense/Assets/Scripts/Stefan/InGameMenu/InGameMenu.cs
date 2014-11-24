@@ -71,6 +71,7 @@ public class InGameMenu : MonoBehaviour
             {
                 Debug.Log(hit.collider.name);
                 buildMode = false;
+                ToggleMask(false);
             }
         }
     }
@@ -91,7 +92,8 @@ public class InGameMenu : MonoBehaviour
 
         if (GUI.Button(new Rect(4, 4, 48, 48), menuItem))
         {
-            Debug.Log("Button 1");
+            //Debug.Log("Button 1");
+            ToggleMask(true);
             buildMode = true;
             BuildObj = Instantiate(BuildObj) as GameObject;
             BuildObj.tag = "Player";
@@ -100,7 +102,7 @@ public class InGameMenu : MonoBehaviour
         if (GUI.Button(new Rect(56, 4, 48, 48), menuItem1))
         {
             Debug.Log("Button 2");
-            Debug.Log(buildPlaces.Length);
+            Debug.Log(buildPlaces.Length);            
 
         }
 
@@ -157,7 +159,13 @@ public class InGameMenu : MonoBehaviour
         GUI.EndGroup();
     }
 
-
+    private void ToggleMask(bool toggle)
+    {        
+        foreach (GameObject place in buildPlaces)
+        {
+            place.GetComponent<MeshRenderer>().enabled = toggle;
+        }
+    }
 
 
     //For test and reference purpose
