@@ -70,7 +70,7 @@ public class InGameMenu : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 Debug.Log(hit.collider.name);
-                buildMode = false;                
+                buildMode = false;
             }
         }
     }
@@ -101,7 +101,7 @@ public class InGameMenu : MonoBehaviour
         {
             Debug.Log("Button 2");
             Debug.Log(buildPlaces.Length);
-            
+
         }
 
         if (GUI.Button(new Rect(108, 4, 48, 48), menuItem2))
