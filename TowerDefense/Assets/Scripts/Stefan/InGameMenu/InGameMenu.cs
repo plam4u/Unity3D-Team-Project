@@ -31,18 +31,51 @@ public class InGameMenu : MonoBehaviour
     public Texture2D menuItem9;
     public Texture2D menuItem10;
     public Texture2D menuItem11;
-
     public Texture2D menuBg;
 
+    public GameObject BuildObj;
+    
 
+    //Private var's
+    private LayerMask layerMask = 1 << 8;
+
+    private bool buildMode = false;
+
+    private GameObject lastHitObj;
+
+    
+
+    
 
     void Awake()
     {
         menuPosX = Screen.width - menuWidth;
         menuPosY = Screen.height - menuHeght;
-
     }
 
+
+    void Update()
+    {
+        if (buildMode)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if(Physics.Raycast(ray, out hit, 50, layerMask))
+            {
+                Debug.Log(hit.collider.tag);
+                BuildObj.transform.position = hit.collider.transform.position;
+            }
+
+            if (Input.GetMouseButton(0))
+            {
+                Debug.Log(hit.collider.name);
+                buildMode = false;
+            }
+        }
+        
+    }
+
+    
     //Render the ingame menu with GUI style
     void OnGUI()
     {
@@ -57,8 +90,11 @@ public class InGameMenu : MonoBehaviour
         GUI.BeginGroup(new Rect(menuPosX, menuPosY, menuWidth, menuHeght), menuBg);
 
         if (GUI.Button(new Rect(4, 4, 48, 48), menuItem))
-        {
+        {           
             Debug.Log("Button 1");
+            buildMode = true;
+            BuildObj = Instantiate(BuildObj) as GameObject;
+            BuildObj.tag = "Player";
         }
 
         if (GUI.Button(new Rect(56, 4, 48, 48), menuItem1))
@@ -123,107 +159,107 @@ public class InGameMenu : MonoBehaviour
 
 
     //For test and reference purpose
-    private void All()
-    {
-        GUI.BeginGroup(new Rect(menuPosX, menuPosY, menuWidth, menuHeght), menuBg);
+    //private void All()
+    //{
+    //    GUI.BeginGroup(new Rect(menuPosX, menuPosY, menuWidth, menuHeght), menuBg);
 
-        GUI.Button(new Rect(4, 4, 48, 48), menuItem);
-        GUI.Button(new Rect(56, 4, 48, 48), menuItem);
-        GUI.Button(new Rect(108, 4, 48, 48), menuItem);
-        GUI.Button(new Rect(160, 4, 48, 48), menuItem);
+    //    GUI.Button(new Rect(4, 4, 48, 48), menuItem);
+    //    GUI.Button(new Rect(56, 4, 48, 48), menuItem);
+    //    GUI.Button(new Rect(108, 4, 48, 48), menuItem);
+    //    GUI.Button(new Rect(160, 4, 48, 48), menuItem);
 
-        GUI.Button(new Rect(4, 56, 48, 48), menuItem);
-        GUI.Button(new Rect(56, 56, 48, 48), menuItem);
-        GUI.Button(new Rect(108, 56, 48, 48), menuItem);
-        GUI.Button(new Rect(160, 56, 48, 48), menuItem);
+    //    GUI.Button(new Rect(4, 56, 48, 48), menuItem);
+    //    GUI.Button(new Rect(56, 56, 48, 48), menuItem);
+    //    GUI.Button(new Rect(108, 56, 48, 48), menuItem);
+    //    GUI.Button(new Rect(160, 56, 48, 48), menuItem);
 
-        GUI.Button(new Rect(4, 108, 48, 48), menuItem);
-        GUI.Button(new Rect(56, 108, 48, 48), menuItem);
-        GUI.Button(new Rect(108, 108, 48, 48), menuItem);
-        GUI.Button(new Rect(160, 108, 48, 48), menuItem);
+    //    GUI.Button(new Rect(4, 108, 48, 48), menuItem);
+    //    GUI.Button(new Rect(56, 108, 48, 48), menuItem);
+    //    GUI.Button(new Rect(108, 108, 48, 48), menuItem);
+    //    GUI.Button(new Rect(160, 108, 48, 48), menuItem);
 
-        GUI.EndGroup();
-    }
+    //    GUI.EndGroup();
+    //}
 
     //For Test Purpose
-    private void Half()
-    {
-        GUI.BeginGroup(new Rect(menuPosX, menuPosY, menuWidth, menuHeght));
-        GUI.Button(new Rect(10, 10, 40, 40), menuItem);
-        GUI.Button(new Rect(60, 10, 40, 40), menuItem);
-        GUI.Button(new Rect(110, 10, 40, 40), menuItem);
-        GUI.Button(new Rect(10, 60, 40, 40), menuItem);
-        GUI.EndGroup();
-    }
+    //private void Half()
+    //{
+    //    GUI.BeginGroup(new Rect(menuPosX, menuPosY, menuWidth, menuHeght));
+    //    GUI.Button(new Rect(10, 10, 40, 40), menuItem);
+    //    GUI.Button(new Rect(60, 10, 40, 40), menuItem);
+    //    GUI.Button(new Rect(110, 10, 40, 40), menuItem);
+    //    GUI.Button(new Rect(10, 60, 40, 40), menuItem);
+    //    GUI.EndGroup();
+    //}
 
 
-    //For test Purpose
-    private void TestMenu()
-    {
+    ////For test Purpose
+    //private void TestMenu()
+    //{
 
-        GUI.BeginGroup(new Rect(menuPosX, menuPosY, menuWidth, menuHeght), menuBg);
+    //    GUI.BeginGroup(new Rect(menuPosX, menuPosY, menuWidth, menuHeght), menuBg);
 
-        if (GUI.Button(new Rect(4, 4, 48, 48), menuItem))
-        {
-            Debug.Log("Button 1");
-        }
+    //    if (GUI.Button(new Rect(4, 4, 48, 48), menuItem))
+    //    {
+    //        Debug.Log("Button 1");
+    //    }
 
-        if (GUI.Button(new Rect(56, 4, 48, 48), menuItem))
-        {
-            Debug.Log("Button 2");
-        }
+    //    if (GUI.Button(new Rect(56, 4, 48, 48), menuItem))
+    //    {
+    //        Debug.Log("Button 2");
+    //    }
 
-        if (GUI.Button(new Rect(108, 4, 48, 48), menuItem))
-        {
-            Debug.Log("Button 3");
-        }
+    //    if (GUI.Button(new Rect(108, 4, 48, 48), menuItem))
+    //    {
+    //        Debug.Log("Button 3");
+    //    }
 
-        if (GUI.Button(new Rect(160, 4, 48, 48), menuItem))
-        {
-            Debug.Log("Button 4");
-        }
+    //    if (GUI.Button(new Rect(160, 4, 48, 48), menuItem))
+    //    {
+    //        Debug.Log("Button 4");
+    //    }
 
-        if (GUI.Button(new Rect(4, 56, 48, 48), menuItem))
-        {
-            Debug.Log("Button 5");
-        }
+    //    if (GUI.Button(new Rect(4, 56, 48, 48), menuItem))
+    //    {
+    //        Debug.Log("Button 5");
+    //    }
 
-        if (GUI.Button(new Rect(56, 56, 48, 48), menuItem))
-        {
-            Debug.Log("Button 6");
-        }
+    //    if (GUI.Button(new Rect(56, 56, 48, 48), menuItem))
+    //    {
+    //        Debug.Log("Button 6");
+    //    }
 
-        if (GUI.Button(new Rect(108, 56, 48, 48), menuItem))
-        {
-            Debug.Log("Button 7");
-        }
+    //    if (GUI.Button(new Rect(108, 56, 48, 48), menuItem))
+    //    {
+    //        Debug.Log("Button 7");
+    //    }
 
-        if (GUI.Button(new Rect(160, 56, 48, 48), menuItem))
-        {
-            Debug.Log("Button 8");
-        }
+    //    if (GUI.Button(new Rect(160, 56, 48, 48), menuItem))
+    //    {
+    //        Debug.Log("Button 8");
+    //    }
 
-        if (GUI.Button(new Rect(4, 108, 48, 48), menuItem))
-        {
-            Debug.Log("Button 9");
-        }
+    //    if (GUI.Button(new Rect(4, 108, 48, 48), menuItem))
+    //    {
+    //        Debug.Log("Button 9");
+    //    }
 
-        if (GUI.Button(new Rect(56, 108, 48, 48), menuItem))
-        {
-            Debug.Log("Button 10");
-        }
+    //    if (GUI.Button(new Rect(56, 108, 48, 48), menuItem))
+    //    {
+    //        Debug.Log("Button 10");
+    //    }
 
-        if (GUI.Button(new Rect(108, 108, 48, 48), menuItem))
-        {
-            Debug.Log("Button 11");
-        }
+    //    if (GUI.Button(new Rect(108, 108, 48, 48), menuItem))
+    //    {
+    //        Debug.Log("Button 11");
+    //    }
 
-        if (GUI.Button(new Rect(160, 108, 48, 48), menuItem))
-        {
-            Debug.Log("Button 12");
-        }
+    //    if (GUI.Button(new Rect(160, 108, 48, 48), menuItem))
+    //    {
+    //        Debug.Log("Button 12");
+    //    }
 
-        GUI.EndGroup();
-    }
+    //    GUI.EndGroup();
+    //}
 
 }
