@@ -52,6 +52,7 @@ public class InGameMenu : MonoBehaviour
         menuPosX = Screen.width - menuWidth;
         menuPosY = Screen.height - menuHeght;
         buildPlaces = GameObject.FindGameObjectsWithTag("BuildMask");
+        ToggleMask(false);
     }
 
 
@@ -102,7 +103,7 @@ public class InGameMenu : MonoBehaviour
         if (GUI.Button(new Rect(56, 4, 48, 48), menuItem1))
         {
             Debug.Log("Button 2");
-            Debug.Log(buildPlaces.Length);            
+            Debug.Log(buildPlaces.Length);
 
         }
 
@@ -160,7 +161,7 @@ public class InGameMenu : MonoBehaviour
     }
 
     private void ToggleMask(bool toggle)
-    {        
+    {
         foreach (GameObject place in buildPlaces)
         {
             place.GetComponent<MeshRenderer>().enabled = toggle;
