@@ -33,6 +33,7 @@ public class InGameMenu : MonoBehaviour
     public Texture2D menuItem10;
     public Texture2D menuItem11;
     public Texture2D menuBg;
+    public Texture2D statsBar;
 
     public GameObject BuildObj;
 
@@ -46,6 +47,8 @@ public class InGameMenu : MonoBehaviour
 
     private GameObject[] buildPlaces;
 
+    private int score = 0;
+    private int money = 1500;
 
 
     void Awake()
@@ -178,7 +181,11 @@ public class InGameMenu : MonoBehaviour
 
     private void Stats()
     {
-        GUI.Box(new Rect(0, 0, 100, 50), "Top-left");
+        
+        GUI.BeginGroup(new Rect(0, 0, 300, 48), statsBar);
+        GUI.Box(new Rect(40, 10, 100, 40), money.ToString());
+        GUI.Box(new Rect(184, 10, 100, 40), score.ToString());
+        GUI.EndGroup();
     }
 
 
