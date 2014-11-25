@@ -71,6 +71,7 @@ public class InGameMenu : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 Debug.Log(hit.collider.name);
+                hit.collider.GetComponent<MeshCollider>().enabled = false;
                 buildMode = false;
                 ToggleMask(false);
             }
@@ -94,10 +95,14 @@ public class InGameMenu : MonoBehaviour
         if (GUI.Button(new Rect(4, 4, 48, 48), menuItem))
         {
             //Debug.Log("Button 1");
-            ToggleMask(true);
-            buildMode = true;
-            BuildObj = Instantiate(BuildObj) as GameObject;
-            BuildObj.tag = "Player";
+
+            if (!buildMode)
+            {
+                ToggleMask(true);
+                buildMode = true;
+                BuildObj = Instantiate(BuildObj) as GameObject;
+                BuildObj.tag = "Player"; 
+            }
         }
 
         if (GUI.Button(new Rect(56, 4, 48, 48), menuItem1))
