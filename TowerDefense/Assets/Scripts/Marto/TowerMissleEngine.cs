@@ -7,6 +7,7 @@ using System.Collections;
 /// </summary>
 public class TowerMissleEngine : MonoBehaviour
 {
+    public static readonly int TowerCost = 500;
 	private GameObject enemy;
 	private float missileSpeed;
 	private float missileDamage;

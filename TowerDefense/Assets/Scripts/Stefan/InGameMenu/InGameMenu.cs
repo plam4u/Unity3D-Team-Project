@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts.Vasko;
 
 //Need Tobe attach to a Empty game object
 //Need To be added to every scene 
@@ -56,7 +57,7 @@ public class InGameMenu : MonoBehaviour
     private List<GameObject> curObjects = new List<GameObject>();
 
     private int score = 0;
-    private int money = 1500;
+    private Money money = new Money(1500);
     private int countObj = 1;
 
 
@@ -129,6 +130,9 @@ public class InGameMenu : MonoBehaviour
                 newObj = Instantiate(BuildObj) as GameObject;
                 newObj.tag = "Player";
                 newObj.name = BuildObj.name + countObj;
+
+                // TODO: make something smarter with tower cost
+                this.money -= TowerMissleEngine.TowerCost;
                 //TO DO: Activate Object - from state IDLE
             }
         }
@@ -214,7 +218,8 @@ public class InGameMenu : MonoBehaviour
     {
 
         GUI.BeginGroup(new Rect(0, 0, 300, 48), statsBar);
-        GUI.Box(new Rect(40, 10, 100, 40), money.ToString());
+        money.Show(40, 10, 100, 40);
+        //GUI.Box(new Rect(40, 10, 100, 40), money.Gold.ToString());
         GUI.Box(new Rect(184, 10, 100, 40), score.ToString());
         GUI.EndGroup();
     }

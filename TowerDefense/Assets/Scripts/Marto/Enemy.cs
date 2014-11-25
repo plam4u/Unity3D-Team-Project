@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
 	public int ArmorPoints;
 	private int height;
 	private bool isAlive = true;
+    private string direction = "first";
 	
 	void Start ()
 	{
@@ -24,7 +25,37 @@ public class Enemy : MonoBehaviour
 			Destroy (gameObject);
 			//TODO: Add explosion here or some die effect.
 		}
+
+        MoveEnemy();
 	}
+
+    private void MoveEnemy()
+    {
+        if (direction == "first")
+        {
+            this.transform.Translate(-1 * Time.deltaTime, 0, 0);
+            if (this.transform.position.x <= 27)
+            {
+                direction = "second";
+            }
+        }
+        else if (direction == "second")
+        {
+            this.transform.Translate(0, 0, 1 * Time.deltaTime);
+            if (this.transform.position.z >= 21)
+            {
+                direction = "third";
+            }
+        }
+        else if(direction == "third")
+        {
+            this.transform.Translate(-1 * Time.deltaTime, 0, 0);
+            if (this.transform.position.x <= 5)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+    }
 
 	/// <summary>
 	/// This method is called by the tower projectile and decreases the enemies health, based on the tower damage.
