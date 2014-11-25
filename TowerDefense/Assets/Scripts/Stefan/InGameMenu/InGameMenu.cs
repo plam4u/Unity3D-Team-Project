@@ -84,7 +84,7 @@ public class InGameMenu : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 //Debug.Log(hit.collider.name);
-                if (hit.collider.tag == "BuildMask")
+                if (hit.collider)
                 {
                     hit.collider.GetComponent<MeshCollider>().enabled = false;
                     buildMode = false;
@@ -122,7 +122,7 @@ public class InGameMenu : MonoBehaviour
         {
             //Debug.Log("Button 1");
 
-            if (!buildMode)
+            if (buildMode == false)
             {
                 ToggleMask(true);
                 buildMode = true;
