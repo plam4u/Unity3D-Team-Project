@@ -34,8 +34,13 @@ public class InGameMenu : MonoBehaviour
     public Texture2D menuItem11;
     public Texture2D menuBg;
     public Texture2D statsBar;
-
+    
     public GameObject BuildObj;
+    public GameObject BuildObj1;
+    public GameObject BuildObj2;
+    public GameObject BuildObj3;
+    public GameObject BuildObj4;
+    public GameObject newObj;
 
 
     //Private var's
@@ -46,9 +51,13 @@ public class InGameMenu : MonoBehaviour
     private GameObject lastHitObj;
 
     private GameObject[] buildPlaces;
+    //private GameObject[] curObjects;
+
+    private List<GameObject> curObjects = new List<GameObject>();
 
     private int score = 0;
     private int money = 1500;
+    private int countObj = 1;
 
 
     void Awake()
@@ -68,16 +77,28 @@ public class InGameMenu : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 50, layerMask))
             {
-                Debug.Log(hit.collider.tag);
-                BuildObj.transform.position = hit.collider.transform.position;
+                //Debug.Log(hit.collider.tag);
+                newObj.transform.position = hit.collider.transform.position;
             }
 
             if (Input.GetMouseButton(0))
             {
-                Debug.Log(hit.collider.name);
-                hit.collider.GetComponent<MeshCollider>().enabled = false;
+                //Debug.Log(hit.collider.name);
+                if (hit.collider.tag == "BuildMask")
+                {
+                    hit.collider.GetComponent<MeshCollider>().enabled = false;
+                    buildMode = false;
+                    ToggleMask(false);
+                    curObjects.Add(newObj);
+                    countObj++;
+                }
+            }
+
+            if (Input.GetMouseButton(1))
+            {
                 buildMode = false;
                 ToggleMask(false);
+                Destroy(newObj);
             }
         }
     }
@@ -105,16 +126,17 @@ public class InGameMenu : MonoBehaviour
             {
                 ToggleMask(true);
                 buildMode = true;
-                BuildObj = Instantiate(BuildObj) as GameObject;
-                BuildObj.tag = "Player";
+                newObj = Instantiate(BuildObj) as GameObject;
+                newObj.tag = "Player";
+                newObj.name = BuildObj.name + countObj;
                 //TO DO: Activate Object - from state IDLE
             }
         }
 
         if (GUI.Button(new Rect(56, 4, 48, 48), menuItem1))
         {
-            Debug.Log("Button 2");
-            Debug.Log(buildPlaces.Length);
+            //Debug.Log("Button 2");
+            //Debug.Log(buildPlaces.Length);
 
         }
 
@@ -181,7 +203,7 @@ public class InGameMenu : MonoBehaviour
 
     private void Stats()
     {
-        
+
         GUI.BeginGroup(new Rect(0, 0, 300, 48), statsBar);
         GUI.Box(new Rect(40, 10, 100, 40), money.ToString());
         GUI.Box(new Rect(184, 10, 100, 40), score.ToString());
