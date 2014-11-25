@@ -8,6 +8,7 @@ using System.Collections.Generic;
 public class InGameMenu : MonoBehaviour
 {
     public GUISkin inGameSkin = null;
+    public GUISkin statSkin = null;
 
     float menuWidth = 212.0f;
     float menuHeght = 160.0f;
@@ -84,6 +85,7 @@ public class InGameMenu : MonoBehaviour
     {
         GUI.skin = inGameSkin;
         InGame();
+        Stats();
     }
 
     //This is the ingame Menu
@@ -101,7 +103,8 @@ public class InGameMenu : MonoBehaviour
                 ToggleMask(true);
                 buildMode = true;
                 BuildObj = Instantiate(BuildObj) as GameObject;
-                BuildObj.tag = "Player"; 
+                BuildObj.tag = "Player";
+                //TO DO: Activate Object - from state IDLE
             }
         }
 
@@ -171,6 +174,11 @@ public class InGameMenu : MonoBehaviour
         {
             place.GetComponent<MeshRenderer>().enabled = toggle;
         }
+    }
+
+    private void Stats()
+    {
+        GUI.Box(new Rect(0, 0, 100, 50), "Top-left");
     }
 
 
