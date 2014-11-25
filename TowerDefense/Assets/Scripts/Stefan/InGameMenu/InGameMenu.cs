@@ -137,6 +137,15 @@ public class InGameMenu : MonoBehaviour
         {
             //Debug.Log("Button 2");
             //Debug.Log(buildPlaces.Length);
+            if (buildMode == false)
+            {
+                ToggleMask(true);
+                buildMode = true;
+                newObj = Instantiate(BuildObj1) as GameObject;
+                newObj.tag = "Player";
+                newObj.name = BuildObj.name + countObj;
+                //TO DO: Activate Object - from state IDLE
+            }
 
         }
 
