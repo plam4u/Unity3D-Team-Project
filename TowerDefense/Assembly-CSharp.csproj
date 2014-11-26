@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Marto\Shoot.cs" />
      <Compile Include="Assets\Scripts\Marto\TowerMissleEngine.cs" />
      <Compile Include="Assets\Scripts\Plamen\TestTerrainGenerator.cs" />
+     <Compile Include="Assets\Scripts\Stefan\ForTest\CheckFire.cs" />
      <Compile Include="Assets\Scripts\Stefan\InGameMenu\InGameMenu.cs" />
      <Compile Include="Assets\Scripts\Stefan\MainMenu\Menu.cs" />
      <Compile Include="Assets\Scripts\Stefan\MouseSelect\MouseSelection.cs" />

@@ -129,7 +129,7 @@ public class InGameMenu : MonoBehaviour
                 ToggleMask(true);
                 buildMode = true;
                 newObj = Instantiate(BuildObj) as GameObject;
-                newObj.tag = "Player";
+                newObj.tag = "Tower";
                 newObj.name = BuildObj.name + countObj;
 
                 // TODO: make something smarter with tower cost
@@ -147,7 +147,7 @@ public class InGameMenu : MonoBehaviour
                 ToggleMask(true);
                 buildMode = true;
                 newObj = Instantiate(BuildObj1) as GameObject;
-                newObj.tag = "Player";
+                newObj.tag = "Tower";
                 newObj.name = BuildObj.name + countObj;
                 //TO DO: Activate Object - from state IDLE
             }
