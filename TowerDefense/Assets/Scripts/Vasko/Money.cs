@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Assets.Scripts.Vasko
-{
+
     class Money : MonoBehaviour
     {
         private int gold;
 
+        InGameMenu moneyMenu = new InGameMenu();
+
+        
+        
+        
         public Money(int gold)
         {
             this.Gold = gold;
@@ -44,4 +48,4 @@ namespace Assets.Scripts.Vasko
         }
 
     }
-}
+
