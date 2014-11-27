@@ -148,7 +148,7 @@ public class InGameMenu : MonoBehaviour
                 buildMode = true;
                 newObj = Instantiate(BuildObj1) as GameObject;
                 newObj.tag = "Tower";
-                newObj.name = BuildObj.name + countObj;
+                newObj.name = BuildObj1.name + countObj;
                 //TO DO: Activate Object - from state IDLE
             }
 
