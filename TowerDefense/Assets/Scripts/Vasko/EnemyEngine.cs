@@ -9,9 +9,10 @@ using System.Threading;
     {
         public GameObject enemy;
         public GameObject startPos;
-        public List<GameObject> path;
         public int enemies = 10;
-        public float time = 10;
+        public float timeBetweenWaves = 5;
+        public float timeThicks = 0.3f;
+
 
         void Start()
         {
@@ -19,10 +20,18 @@ using System.Threading;
 
         void Update()
         {
-            time -= Time.deltaTime;
-            if (time <= 0)
+            timeBetweenWaves -= Time.deltaTime;
+            if (timeBetweenWaves <= 0)
             {
+                Instantiate(enemy, startPos.transform.position, this.transform.rotation);
+                enemies--;
+                timeBetweenWaves = timeThicks;
 
+                if (enemies < 0)
+                {
+                    timeBetweenWaves = 5;
+                    enemies = 10;
+                }
             }
         }
 

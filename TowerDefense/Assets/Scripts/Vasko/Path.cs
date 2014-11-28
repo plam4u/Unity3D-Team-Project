@@ -10,7 +10,7 @@ class Path : MonoBehaviour
     public float speed = 10;
 
     private List<GameObject> path = new List<GameObject>();
-    private int count = 0;
+    private int count = 0; // count the array path
 
     void Start()
     {
@@ -22,11 +22,6 @@ class Path : MonoBehaviour
         path = path.OrderBy(x => x.name).ToList(); // Sort them by name
 
         MoveFinalLast(); // Move Final items at the end of the array
-
-        foreach (var item in path)
-        {
-            Debug.Log(item.name);
-        }
     }
 
     void Update()
