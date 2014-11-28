@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Stefan\MouseSelect\MouseSelection.cs" />
      <Compile Include="Assets\Scripts\Vasko\EnemyEngine.cs" />
      <Compile Include="Assets\Scripts\Vasko\Money.cs" />
+     <Compile Include="Assets\Scripts\Vasko\Path.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

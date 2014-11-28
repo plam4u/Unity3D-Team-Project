@@ -8,10 +8,14 @@ using System.Collections.Generic;
 public class InGameMenu : MonoBehaviour
 {
     public GUISkin inGameSkin = null;
-    public GUISkin statSkin = null;
+    public GUIStyle subMenuStyle = null;
 
     float menuWidth = 212.0f;
     float menuHeght = 160.0f;
+	float menuSubWidth;
+	float menuSubHeight = 48.0f;
+	float menuSubPoX;
+	float menuSubPoY;
     float menuPosX;
     float menuPosY;
     float menuItemX = 48;
@@ -21,6 +25,10 @@ public class InGameMenu : MonoBehaviour
 
     public int score = 756;
     public int money = 1500;
+	public int priceObj1 = 300;
+	public int priceObj2;
+	public int priceObj3;
+	public int priceObj4;
 
 
     public Texture2D menuItem;
@@ -37,6 +45,7 @@ public class InGameMenu : MonoBehaviour
     public Texture2D menuItem11;
     public Texture2D menuBg;
     public Texture2D statsBar;
+	public Texture2D priceMenuBg;
     
     public GameObject BuildObj;
     public GameObject BuildObj1;
@@ -60,6 +69,7 @@ public class InGameMenu : MonoBehaviour
 
     
     private int countObj = 1;
+	private int objPrice;
 
 
     void Awake()
@@ -68,6 +78,10 @@ public class InGameMenu : MonoBehaviour
         menuPosY = Screen.height - menuHeght;
         buildPlaces = GameObject.FindGameObjectsWithTag("BuildMask");
         ToggleMask(false);
+		
+		menuSubWidth = menuWidth;
+		menuSubPoX = menuPosX;
+		menuSubPoY = menuPosY - menuSubHeight;
     }
 
 
@@ -93,6 +107,7 @@ public class InGameMenu : MonoBehaviour
                     ToggleMask(false);
                     curObjects.Add(newObj);
                     countObj++;
+					objPrice = 0;
                 }
             }
 
@@ -101,6 +116,7 @@ public class InGameMenu : MonoBehaviour
                 buildMode = false;
                 ToggleMask(false);
                 Destroy(newObj);
+				objPrice = 0;
             }
         }
     }
@@ -111,6 +127,7 @@ public class InGameMenu : MonoBehaviour
     {
         GUI.skin = inGameSkin;
         InGame();
+		MenuPrice();
         Stats();
     }
 
@@ -131,11 +148,12 @@ public class InGameMenu : MonoBehaviour
                 newObj = Instantiate(BuildObj) as GameObject;
                 newObj.tag = "Tower";
                 newObj.name = BuildObj.name + countObj;
+				objPrice = priceObj1;
 
                 // TODO: make something smarter with tower cost
                 //this.money -= TowerMissleEngine.TowerCost;
                 //TODO: Activate Object - from state IDLE
-            }
+            }			
         }
 
         if (GUI.Button(new Rect(56, 4, 48, 48), menuItem1))
@@ -223,6 +241,13 @@ public class InGameMenu : MonoBehaviour
         GUI.Box(new Rect(184, 10, 100, 40), score.ToString());
         GUI.EndGroup();
     }
+	
+	private void MenuPrice()
+	{
+		GUI.BeginGroup(new Rect(menuSubPoX, menuSubPoY, menuSubWidth, menuSubHeight));
+		GUI.Box(new Rect(10, 10 , 150, 48.0f), "Unit Price: " + objPrice, subMenuStyle);
+		GUI.EndGroup();
+	}
 
 
     //For test and reference purpose
