@@ -5,8 +5,6 @@ using System.Text;
 using UnityEngine;
 using System.Threading;
 
-namespace Assets.Scripts.Vasko
-{
     class EnemyEngine : MonoBehaviour
     {
         public GameObject enemy;
@@ -17,13 +15,15 @@ namespace Assets.Scripts.Vasko
 
         void Start()
         {
-
         }
 
         void Update()
         {
-            //Thread.Sleep(500);
+            time -= Time.deltaTime;
+            if (time <= 0)
+            {
 
+            }
         }
 
         public bool MeasureTime(float time)
@@ -39,4 +39,3 @@ namespace Assets.Scripts.Vasko
             }
         }
     }
-}
