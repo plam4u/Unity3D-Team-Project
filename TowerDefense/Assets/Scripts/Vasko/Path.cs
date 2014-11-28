@@ -46,7 +46,7 @@ class Path : MonoBehaviour
 
             this.count = randomGenerator.Next(this.count, this.count + equalPaths);
 
-            if (this.path[this.count].name.StartsWith("Final"))
+            if (this.path[this.count + 1].name.StartsWith("Final"))
             {
                 FindMostShortWayToFinal();
             }

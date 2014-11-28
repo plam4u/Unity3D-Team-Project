@@ -13,9 +13,14 @@ using System.Threading;
         public float timeBetweenWaves = 5;
         public float timeThicks = 0.3f;
 
+        private int DefaultEnemies;
+        private float DefaultTimeBetweenWaves;
+
 
         void Start()
         {
+            DefaultEnemies = enemies;
+            DefaultTimeBetweenWaves = timeBetweenWaves;
         }
 
         void Update()
@@ -29,8 +34,8 @@ using System.Threading;
 
                 if (enemies < 0)
                 {
-                    timeBetweenWaves = 5;
-                    enemies = 10;
+                    timeBetweenWaves = DefaultTimeBetweenWaves;
+                    enemies = DefaultEnemies;
                 }
             }
         }
