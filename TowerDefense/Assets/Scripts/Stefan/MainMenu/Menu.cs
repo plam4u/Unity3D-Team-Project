@@ -61,7 +61,7 @@ public class Menu : MonoBehaviour
 
             if (GUI.Button(new Rect(0, 0, 200, 50), "Start Game"))
             {
-                if (Application.loadedLevelName == "PlayScene")
+                if (Application.loadedLevelName == "L1")
                 {
                     //Debug.Log("this level");
                     Application.LoadLevel(Application.loadedLevel);
@@ -70,7 +70,7 @@ public class Menu : MonoBehaviour
                 else
                 {
                     //Debug.Log("Application Load Level");
-                    Application.LoadLevel("PlayScene");
+                    Application.LoadLevel("L1");
                 }
             }
 
