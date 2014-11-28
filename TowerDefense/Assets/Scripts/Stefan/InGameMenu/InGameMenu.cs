@@ -23,8 +23,8 @@ public class InGameMenu : MonoBehaviour
     float menuItemOffX;
     float menuItemOffY;
 
-    public int score = 756;
-    public int money = 1500;
+    public int score = GameController.Score;
+    public int money = GameController.Money;
     public int priceObj1 = 300;
     public int priceObj2;
     public int priceObj3;
