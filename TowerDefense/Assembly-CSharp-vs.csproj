@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Marto\Shoot.cs" />
      <Compile Include="Assets\Scripts\Marto\TowerMissleEngine.cs" />
      <Compile Include="Assets\Scripts\Plamen\TestTerrainGenerator.cs" />
+     <Compile Include="Assets\Scripts\Stefan\Controller\GameController.cs" />
      <Compile Include="Assets\Scripts\Stefan\FlickerLight\LightFlick.cs" />
      <Compile Include="Assets\Scripts\Stefan\ForTest\CheckFire.cs" />
      <Compile Include="Assets\Scripts\Stefan\InGameMenu\InGameMenu.cs" />
