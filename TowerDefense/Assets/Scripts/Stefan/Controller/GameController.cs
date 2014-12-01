@@ -14,8 +14,8 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
-        Money = 1250;
-        Score = 239;
+        StartMoney(1367);
+        StartScore(345);
     }
 
     void Start()
