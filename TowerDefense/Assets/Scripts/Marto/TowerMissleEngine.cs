@@ -65,11 +65,12 @@ public class TowerMissleEngine : MonoBehaviour
 	{
 		// TODO: Play explosion animation
 		//Destroy rocket if it hits an enemy or something other than the tower that launched it.
-		if (!other.gameObject.CompareTag ("Tower")) {
+		if (!other.CompareTag ("Tower")) {
+			Debug.Log ("Shooting: " + other.tag);
 			Destroy (this.gameObject);
 		}
 		
-		if (other.gameObject.CompareTag ("Enemy")) {
+		if (other.CompareTag ("Enemy")) {
 			DoDamageToEnemy (other.gameObject);
 		}
 	}

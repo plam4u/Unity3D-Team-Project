@@ -40,6 +40,7 @@ public class Shoot : MonoBehaviour
 	/// <param name="other">Other.</param>
 	void OnTriggerEnter (Collider other)
 	{
+		Debug.Log ("Enter: " + other.tag);
 		bool hasEnemy = enemy == null ? false : true;
 		if (!hasEnemy) {
 			enemy = ReturnEnemyInRange (other);
@@ -52,11 +53,16 @@ public class Shoot : MonoBehaviour
 	/// <param name="other">Other.</param>
 	void OnTriggerStay (Collider other)
 	{
+		Debug.Log ("Stay: " + other.tag);
 		bool isAllowedToFire = enemy != null && Time.time >= nextFireTime;
 		if (isAllowedToFire) {
 			FireProjectile (enemy);
 			nextFireTime = Time.time + (ReloadTime * .5f);
-		} 
+		}
+
+		if(enemy == null) {
+			enemy = ReturnEnemyInRange (other);
+		}
 	}
 	
 	/// <summary>
@@ -65,6 +71,7 @@ public class Shoot : MonoBehaviour
 	/// <param name="other">Other.</param>
 	void OnTriggerExit (Component other)
 	{
+		Debug.Log ("Exit: " + other.tag);
 		if (other.CompareTag ("Enemy")) {
 			enemy = null;
 		}
@@ -114,6 +121,7 @@ public class Shoot : MonoBehaviour
 	{
 		// Initialize the missle at towers position and rotation.
 		GameObject towerBlastClone = (GameObject)Instantiate (TowerBlast, transform.position, Quaternion.Euler (transform.rotation.x, transform.rotation.y, transform.rotation.z));
+
 		//When the missle is initialized add a script to it to handle it's movement.
 		TowerMissleEngine missleEngine = towerBlastClone.AddComponent<TowerMissleEngine> ();
 		
